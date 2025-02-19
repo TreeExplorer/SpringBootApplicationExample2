@@ -1,0 +1,22 @@
+SpringBoot Controller JSON序列化驼峰的坑
+
+问题描述：
+1.
+  使用Lombok
+2.
+  当实体类中的属性定义成第一个单词仅由一个字母组成的时候，例如 rBack ，序列化后的 JSON 会变为 rback。
+  当前台将该参数 rBack 传递到后台，你会发现 rBack 属性获取不到值，反之亦然。
+
+解决办法：
+1.
+  手动添加 setter/getter 方法
+2.
+  在字段的 get 方法上加 @JsonProperty 注解
+  如果使用 lombok 则在字段上加 @JsonProperty 注解
+
+出处：
+————————————————
+版权声明：本文为CSDN博主「不善^」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/java_cxrs/article/details/105850597
+
+1.时间序列化问题，配合配置文件使用注解

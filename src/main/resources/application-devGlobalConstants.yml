@@ -1,0 +1,3 @@
+# 开发环境常量配置文件
+constant:
+  testConstant: "开发环境测试常量"

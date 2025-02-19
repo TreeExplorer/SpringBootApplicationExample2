@@ -1,0 +1,41 @@
+# 配置程序端口号
+server:
+  port: 8099
+  servlet:
+    context-path: /SpringBootExample
+
+spring:
+  application:
+    name: SpringBootApplicationExample
+  profiles:
+    active: dev
+# 当发现404异常时直接抛出异常
+  mvc:
+    throw-exception-if-no-handler-found: true
+# 关闭默认的静态资源路径映射，这样404不会跳转到默认的页面
+  resources:
+    add-mappings: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 20MB
+      max-request-size: 30MB
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+# 配置mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: spring.boot.demo.domain
+cbs:
+  fileDirRoot: C:/RUNTIME/SPRING.BOOT.APPLICATION.EXAMPLE/uploads
+
+# log输出级别
+#logging:
+#  level:
+#    spring.boot.demo: info
+#  file:
+#    path: .\\log\\SpringBootApplicationExample
+logging:
+  config: classpath:logback-spring.xml

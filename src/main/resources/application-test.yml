@@ -1,0 +1,11 @@
+spring:
+    swagger:
+        enable: true
+    profiles:
+        include: testGlobalConstants
+    datasource:
+        url: jdbc:mysql://127.0.0.1:3306/example_spring_boot?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        username: root
+        password: 123456
+        type: com.alibaba.druid.pool.DruidDataSource
